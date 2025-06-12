@@ -1,0 +1,51 @@
+{
+   "train_config": {
+        "log":{
+            "directory": "./exp",
+            "ckpt_iter": "max",
+            "iters_per_ckpt": 10000,
+            "iters_per_valid": 1000
+        },
+        "optimization":{
+            "n_iters": 1600000,
+            "batch_size_total": 2,
+            "batch_size_per_gpu": 2,
+            "n_gpus": 1,
+            "autocast": true,
+            "optimizer": "adam",
+            "fused_adam": true,
+            "learning_rate": 1e-4,
+            "betas": [0.9, 0.999],
+            "eps": 1e-8,
+            "clip_grad_norm_max": 10,
+            "weight_decay": 0
+        },
+        "loss_config":{
+            "cross_entropy": 0,
+            "ell_p": 1,
+            "ell_p_lambda": 1,
+            "stft_lambda": 1,
+            "stft_config":{
+                "sc_lambda": 0.5,
+                "mag_lambda": 0.5,
+                "band": "full",
+                "hop_sizes": [50, 120, 240],
+                "win_lengths": [240, 600, 1200],
+                "fft_sizes": [512, 1024, 2048]
+            },
+            "kd_p": 0
+        }
+    },
+    "trainset_config": {
+        "root": "/media/sjoerd/storage/boeken/jaar7/thesis/DNS-Challenge/",
+        "dataset": "dns",
+        "crop_length_sec": 10,
+        "sample_rate": 16000,
+        "quantization": null,
+        "bits": 32
+    },
+    "dist_config": {
+        "dist_backend": "nccl",
+        "dist_url": "tcp://localhost:54321"
+    }
+}

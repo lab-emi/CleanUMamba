@@ -1,0 +1,24 @@
+{   
+    "network": "CleanUMamba",
+    "pruning_config": {
+        "training_samples": 8192,
+        "pruning_grad_samples": 128,
+        "pruning_repeats": 5,
+        "prune_steps": 2840,
+        "steps_per_valid": 10,
+        "steps_per_ckpt": 60,
+        "n_prune_channels_per_iter": null,
+        "perc_prune_channels_per_iter": 0.005,
+        "max_prune_importance_per_iter": 3e-13,
+        "min_prune_channels_per_iter": 4,
+        "min_channels_per_group": 8,
+        "clip_grad_norm_max": 10,
+        "lr": 0.0001,
+        "lr_divider": 10,
+        "importance_metric": "taylor_squared_individual*n_filters/n_parameters",
+        "calibration": true,
+        "steps_per_calibration": 20,
+        "calibration_ema": 0.5
+    },
+    "exp_path": "DNS-CleanUMamba-Pruning12-2"
+}

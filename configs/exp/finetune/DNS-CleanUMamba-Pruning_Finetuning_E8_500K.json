@@ -1,0 +1,6 @@
+{   
+    "network": "CleanUMamba",
+    "checkpoint_nr": 1599,
+    "exp_path": "DNS-CleanUMamba-Pruning12-2",
+    "training_samples": 100000
+}

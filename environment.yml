@@ -1,0 +1,39 @@
+name: CleanUMambaEnv
+channels:
+  - pytorch      # Primary channel for PyTorch
+  - nvidia       # For the CUDA toolkit
+  - conda-forge  # For other community packages
+  - defaults
+dependencies:
+  # === Conda Dependencies ===
+  # Let Conda handle the core stack. It knows how to match these versions.
+  - python=3.11
+  - pip
+  - cuda-nvcc=11.8
+  - pytorch=2.2.2
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+
+  # Other conda packages
+  - numpy==1.26.4
+  - scipy
+  - pandas
+  - matplotlib
+  - alsa-plugins
+  - pyaudio
+
+  # === Pip Dependencies ===
+  # Use pip only for packages not available on Conda or for specific versions.
+  - pip:
+    - mamba-ssm==1.2.2
+    - causal-conv1d==1.1.0
+    - torchinfo==1.8.0
+    - pykeops==2.3
+    - wandb==0.16.1
+    - pesq
+    - pystoi
+    - PySoundFile
+    - torchprofile
+    - chardet
+    - sounddevice

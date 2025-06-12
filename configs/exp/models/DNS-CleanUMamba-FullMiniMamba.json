@@ -1,0 +1,21 @@
+{   
+    "network": "CleanUMamba",
+    "network_config": {
+        "channels_input": 1,
+        "channels_output": 1,
+        "channels_H": 32,
+        "max_H": 64,
+        "encoder_n_layers": 8,
+        "kernel_size": 4,
+        "stride": 2,
+        "encoder_groups": 1,
+        "bypass_channels": 0,
+        "glu_activation":"Sigmoid",
+        "encoder_norm":null,
+        "tsfm_n_layers": 3,
+        "tsfm_n_head": 4,
+        "tsfm_d_model": 64,
+        "tsfm_d_inner": 128
+    },
+    "exp_path": "DNS-CleanUMamba-FullMiniMamba-3"
+}
